@@ -13,8 +13,14 @@ Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) applicatio
 ```
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
+./mvnw spring-javaformat:apply && ./mvnw package -DskipTests  -Dcheckstyle.skip &&  ./mvnw spring-boot:run  -Dcheckstyle.skip
+
+or
+
 ./mvnw package
 java -jar target/*.war
+
+
 ```
 
 You can then access petclinic here: http://localhost:8080/
@@ -60,6 +66,12 @@ or uncoment in pom.xml
 https://docs.cloudbees.com/docs/cloudbees-rollout/latest/getting-started-guide/java-sdk
 ## Rollout Client Side SDK
 https://docs.cloudbees.com/docs/cloudbees-rollout/latest/getting-started-guide/javascript-sdk
+https://medium.com/jeremy-keeshin/hello-world-for-javascript-with-npm-modules-in-the-browser-6020f82d1072
+
+```
+browserify src/main/resources/static/resources/js/rollout-integration.js -o src/main/resources/static/resources/js/rollout-integration-bundle.js
+```
+
 # Rollout Application Key
 register at https://app.rollout.io/ and get your ROLLOUTAPPLICATIONKEY
 
