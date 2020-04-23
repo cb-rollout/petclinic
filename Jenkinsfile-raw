@@ -7,7 +7,7 @@ metadata:
   name: cloudbees-core
 spec:
   containers:
-    - name: maven
+    - name: jdk-8
       image: openjdk:8-jdk-alpine
       command:
         - cat
@@ -20,7 +20,7 @@ spec:
   stages {
     stage('Run maven') {
       steps {
-             container('jdk') {
+             container('jdk-8') {
               sh './mvnw spring-javaformat:apply  && ./mvnw package'
           }
       }
