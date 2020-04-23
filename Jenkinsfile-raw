@@ -8,14 +8,11 @@ metadata:
 spec:
   containers:
     - name: maven
-      image: jdk-8
-      runAsUser: 1000
+      image: openjdk:8-jdk-alpine
       command:
         - cat
       tty: true
       workingDir: "/home/jenkins/agent"
-      securityContext:
-        runAsUser: 1000
 """
     }
   }

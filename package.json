@@ -1,0 +1,25 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "rox-browser": "^4.9.5"
+  },
+  "name": "petclinic",
+  "description": "<a href=\"https://push-to.cfapps.io?repo=https%3A%2F%2Fgithub.com%2Fspring-projects%2Fspring-petclinic.git\">     <img src=\"https://push-to.cfapps.io/ui/assets/images/Push-to-Pivotal-Light-with-Shadow.svg\" width=\"180\" alt=\"Push\" align=\"center\"> </a>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cb-rollout/petclinic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cb-rollout/petclinic/issues"
+  },
+  "homepage": "https://github.com/cb-rollout/petclinic#readme",
+  "devDependencies": {}
+}
