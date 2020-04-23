@@ -21,7 +21,7 @@ spec:
     stage('Run maven') {
       steps {
              container('jdk-8') {
-              sh './mvnw spring-javaformat:apply  && ./mvnw package'
+              sh './mvnw spring-javaformat:apply  && ./mvnw package -Dcheckstyle.skip -DskipTests'
           }
       }
     }
