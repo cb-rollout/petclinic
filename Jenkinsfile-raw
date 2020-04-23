@@ -1,29 +1,19 @@
+
 pipeline {
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '10'))
-  }
   agent {
     kubernetes {
       yaml """
-apiVersion: v1
 kind: Pod
 metadata:
-  labels:
-    some-label: some-label-value
+  name: cloudbees-core
 spec:
   containers:
-  - name: maven
-    image: jdk-8
-    command:
-    - cat
-    tty: true
-    volumeMounts:
-      - name: cache
-        mountPath: /tmp/cache
-  volumes:
-    - name: cache
-      hostPath:
-        path: /tmp/cache
+    - name: jdk-8
+      image: openjdk:8-jdk-alpine
+      command:
+        - cat
+      tty: true
+      workingDir: "/home/jenkins/agent"
 """
     }
   }
@@ -31,9 +21,11 @@ spec:
   stages {
     stage('Run maven') {
       steps {
-             container('maven') {
-              sh './mvnw spring-javaformat:apply  && ./mvnw package'
+             container('jdk-8') {
+              sh './mvnw spring-javaformat:apply  && ./mvnw package -Dcheckstyle.skip -DskipTests'
           }
       }
     }
+  }
 }
+
