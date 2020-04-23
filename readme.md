@@ -30,18 +30,18 @@ and add your ROLLOUTOUT_APP_KEY in that line
 
 then
 
-``
+```
 ./mvnw spring-javaformat:apply && ./mvnw package -DskipTests  -Dcheckstle.skip &&  ./mvnw spring-boot:run  -Dcheckstyle.skip
-````
+```
 
 then
 
 ```
-open httP://ocalhost:8080
+open http://ocalhost:8080
 
 ```
 
-then toggle featureOne from treu/false and reload the welcome page
+then toggle enableFeatureOne from treu/false and reload the welcome page
 
 You can then access petclinic here: http://localhost:8080/
 
