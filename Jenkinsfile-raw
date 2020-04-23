@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: maven
-      image: maven:3.3.9-jdk-8-alpine
+      image: jdk
       runAsUser: 1000
       command:
         - cat
@@ -23,7 +23,7 @@ spec:
   stages {
     stage('Run maven') {
       steps {
-             container('maven') {
+             container('jdk') {
               sh './mvnw spring-javaformat:apply  && ./mvnw package'
           }
       }
