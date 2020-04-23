@@ -1,0 +1,32 @@
+pipeline {
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
+  }
+  agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    some-label: some-label-value
+spec:
+  containers:
+  - name: jdk-8
+    image: jdk-8
+    command:
+    - cat
+    tty: true
+"""
+    }
+  }
+
+  stages {
+    stage('Run maven') {
+      steps {
+             container('jdk-8') {
+              sh './mvnw spring-javaformat:apply  && ./mvnw package'
+          }
+      }
+    }
+}
