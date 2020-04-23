@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: maven
-      image: jdk
+      image: jdk-8
       runAsUser: 1000
       command:
         - cat
