@@ -19,8 +19,8 @@ then
 
 
 ```
-git clone https://github.com/spring-projects/spring-petclinic.git
-cd spring-petclinic
+git clone git@github.com:cb-rollout/rollout-petclinic-example.git
+cd rollout-petclinic-example
 
 ```
 
