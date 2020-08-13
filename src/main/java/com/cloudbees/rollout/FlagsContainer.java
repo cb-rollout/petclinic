@@ -27,7 +27,7 @@ public class FlagsContainer implements RoxContainer {
 			try {
 				conf = new FlagsContainer();
 				Rox.register("default", conf);
-				Rox.setup("5e95ad1fa6de03e3b693732d").get();
+				Rox.setup("5f3536ba0197fd41dc931200").get();
 				logger.info("rollout init:");
 				logger.info(conf.toString());
 			}
